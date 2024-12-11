@@ -657,10 +657,7 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
 
   @override
   Widget build(BuildContext context) {
-    return FocusScope(
-      onFocusChange: _stateManager.setKeepFocus,
-      onKeyEvent: _handleGridFocusOnKey,
-      child: _GridContainer(
+    return _GridContainer(
         stateManager: _stateManager,
         child: LayoutBuilder(
           builder: (c, size) {
@@ -833,7 +830,6 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
             );
           },
         ),
-      ),
     );
   }
 }
